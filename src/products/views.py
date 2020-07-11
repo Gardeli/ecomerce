@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 from .models import Product
 
-class ProductListView(ListView):
-    #traz todos os produtos do banco de dados sem filtrar nada
-    queryset = Product.objects.all()
 
+class ProductListView(ListView):
+    # lista todos os produtos do banco de dados (sem filtro)
+    queryset = Product.objects.all()
+    template_name = "products/list.html"

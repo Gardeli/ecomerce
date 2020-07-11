@@ -11,10 +11,10 @@ urlpatterns = [
     path('', home_page),
     path('about/', about_page),
     path('contact/', contact_page),
-    path('admin/', admin.site.urls),
     path('login/', login_page),
     path('register/', register_page),
     path('products/', ProductListView.as_view()),
+    path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
