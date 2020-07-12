@@ -8,3 +8,8 @@ class ProductListView(ListView):
     # lista todos os produtos do banco de dados (sem filtro)
     queryset = Product.objects.all()
     template_name = "products/list.html"
+
+    #def get_context_data(self, *args, **kwargs):
+    #    context = super(ProductListView, self).get_context_data(*args, **kwargs)
+    #    print(context)
+    #    return context
