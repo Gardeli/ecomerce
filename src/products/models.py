@@ -45,7 +45,7 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return "/products/{slug}/".format(slug=self.slug)
-    
+
     def __str__(self):
         return self.title
 
