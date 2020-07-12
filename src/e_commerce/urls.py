@@ -12,11 +12,10 @@ urlpatterns = [
     path('contact/', contact_page),
     path('login/', login_page),
     path('register/', register_page),
-    path('products/', include("products.urls")),
+    path('products/', include("products.urls", namespace="products")),
     path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
