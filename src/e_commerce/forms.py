@@ -2,6 +2,9 @@ from django import forms
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
+
+# Formulario para contato com a loja
 class ContactForm(forms.Form):
     nome_completo = forms.CharField(
         error_messages={'required': 'Obrigatório o preenchimento do nome'},
@@ -28,10 +31,14 @@ class ContactForm(forms.Form):
             }
         ))
 
+
+# Formulario de login
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
+
+# Formulario para registro de novo usuario
 class RegisterForm(forms.Form):
     username = forms.CharField()
     email = forms.EmailField()

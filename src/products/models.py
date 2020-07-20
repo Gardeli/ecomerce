@@ -4,7 +4,6 @@ from django.db.models.signals import pre_save
 from django.urls import reverse
 
 
-# Custom queryset
 class ProductQuerySet(models.query.QuerySet):
     def active(self):
         return self.filter(active=True)
@@ -13,6 +12,7 @@ class ProductQuerySet(models.query.QuerySet):
         return self.filter(featured=True, active=True)
 
 
+# Manager dos produtos (admin)
 class ProductManager(models.Manager):
     def get_queryset(self):
         return ProductQuerySet(self.model, using=self._db)
@@ -31,7 +31,7 @@ class ProductManager(models.Manager):
         return None
 
 
-# product_category
+# Caracteristicas do produto
 class Product(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(blank=True, unique=True)
@@ -46,7 +46,6 @@ class Product(models.Model):
     objects = ProductManager()
 
     def get_absolute_url(self):
-        #return "/products/{slug}/".format(slug=self.slug)
         return reverse("products:detail", kwargs={"slug": self.slug})
 
     def __str__(self):

@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from products.models import Product
 
 
+# Caixa de busca de produtos (search bar)
 class SearchProductView(ListView):
 
     template_name = "search/view.html"

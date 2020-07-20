@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 
 from .forms import ContactForm, LoginForm, RegisterForm
 
+# Home principal da loja
 def home_page(request):
     context = {
         "title": "Página principal",
@@ -11,8 +12,11 @@ def home_page(request):
     }
     if request.user.is_authenticated:
         context["premium_content"] = "Você é um usuário Premium"
+
     return render(request, "home_page.html", context)
 
+
+# Pagina "Sobre" da loja
 def about_page(request):
     context = {
         "title": "Página sobre",
@@ -20,6 +24,7 @@ def about_page(request):
     }
     return render(request, "about/view.html", context)
 
+# Pagina com o contato cm a loja
 def contact_page(request):
     contact_form = ContactForm(request.POST or None)
     context = {
@@ -29,39 +34,34 @@ def contact_page(request):
     }
     if contact_form.is_valid():
         print(contact_form.cleaned_data)
-    #if request.method == "POST":
-    #   print(request.POST)
-    #   print(request.POST.get('Nome_Completo'))
-    #   print(request.POST.get('email'))
-    #   print(request.POST.get('Mensagem'))
+
     return render(request, "contact/view.html", context)
 
+
+# Pagina de login da loja com controle de autenticacao
 def login_page(request):
     form = LoginForm(request.POST or None)
     context = {
                     "form": form
               }
     print("User logged in")
-    #print(request.user.is_authenticated)
+
     if form.is_valid():
         print(form.cleaned_data)
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
         user = authenticate(request, username=username, password=password)
         print(user)
-        #print(request.user.is_authenticated)
         if user is not None:
-            #print(request.user.is_authenticated)
             login(request, user)
             print("Login válido")
-            # Redireciona para uma página de sucesso.
             return redirect("/")
         else:
-            #Retorna uma mensagem de erro de 'invalid login'.
             print("Login inválido")
     return render(request, "auth/login.html", context)
 
 
+#  Pagina de logout
 def logout_page(request):
     context = {
                 "content": "Você efetuou o logout com sucesso! :)"
@@ -71,6 +71,8 @@ def logout_page(request):
 
 
 User = get_user_model()
+
+# Pagina de registro para novo usuario no site da loja
 def register_page(request):
     form = RegisterForm(request.POST or None)
     context = {
