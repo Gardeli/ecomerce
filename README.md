@@ -47,11 +47,11 @@ Essa Loja Virtual é uma aplicação construída através do Python e Django par
 
 1. Alem de precisar do Python 3.6 ou + do projeto contem um arquivo chamado requeriments.txt com todas as dependencias do ambiente:
 
-asgiref==3.2.10
-Django==3.0.8
-Pillow==7.2.0
-pytz==2020.1
-sqlparse==0.3.1
+1. asgiref==3.2.10
+2. Django==3.0.8
+3. Pillow==7.2.0
+4. pytz==2020.1
+5. sqlparse==0.3.1
 
 -> **OBS**: As dependencias podem ser instaladas atraves do comando "pip install -r requirements.txt"
 
