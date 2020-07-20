@@ -44,9 +44,9 @@ Essa Loja Virtual é uma aplicação construída através do Python e Django par
 ### 2 -  Configuraçoes do ambiente
 
 
+Ao baixar o projeto, terá um arquivo chamado requeriments.txt com todas as dependencias do ambiente:
 
-1. Alem de precisar do Python 3.6 ou + do projeto contem um arquivo chamado requeriments.txt com todas as dependencias do ambiente:
-
+1. python==3.6
 1. asgiref==3.2.10
 2. Django==3.0.8
 3. Pillow==7.2.0
