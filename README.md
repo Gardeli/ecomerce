@@ -29,15 +29,15 @@ Essa Loja Virtual é uma aplicação construída através do Python e Django par
 1. A aplicação está rodando na porta padrão.
 
 
-2. A API da aplicação pode ser acessada apartir do URL [API] >>Em construçao<<
+2. A API da aplicação pode ser acessada apartir do URL [API] (http://ec2-3-16-180-18.us-east-2.compute.amazonaws.com)
 
 
 
-4. A aplicação está toda hospedada na nuvem separadamente, o webservice na [Amazon AWS](https://aws.amazon.com/pt/) e seu banco de dados **SqLie**
+4. A aplicação está toda hospedada na nuvem separadamente, o webservice na [Amazon AWS](https://aws.amazon.com/pt/) e seu banco de dados **SqLite**
 
 
 
-5. O codigo da aplicação está hospedada no [Github], e esta como projeto Publico
+5. O codigo da aplicação está hospedada no [Github] (https://github.com/Gardeli/ecommerce_shoes), e esta como projeto Publico
 
 
 
